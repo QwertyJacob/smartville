@@ -319,7 +319,18 @@ def verify_traffic(restart=False):
                 if restart:
                     print('will now restart its traffic!')
                     launch_traffic_single(container_key, TRAFFIC_DICT[container_key])
-        
+
+def  verify_attached_controller():
+    switch_container = containers_dict['openvswitch-1']
+    attaching_command = "ovs-vsctl set-controller br0 tcp:192.168.1.1:6633"
+    
+    exec_result = switch_container.exec_run(
+                f"sh -c '{attaching_command} & echo $!'", 
+                detach=True)
+    if exec_result.exit_code == 0:
+        return 200
+    else:
+        return -1
 
 def stop_traffic():
     for container_key, container_obj in containers_dict.items():
@@ -471,6 +482,17 @@ if __name__ == "__main__":
                 self.end_headers()
                 response_obj = get_curricula()
                 self.wfile.write(json.dumps(response_obj).encode())
+            elif self.path == '/attach_controller':
+                response = verify_attached_controller()
+                self.send_response(response)
+                self.send_header('Content-type', 'text/plain')
+                self.end_headers()
+                
+                if response == 200:
+                    response_str = 'Switch and controller attached!'
+                else:
+                    response_str = 'Error attaching the switch to the controller!'
+                self.wfile.write(response_str.encode())
             else:
                 super().do_GET()
 
