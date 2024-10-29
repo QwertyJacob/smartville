@@ -6,7 +6,7 @@ ifneq (,$(wildcard .env))
     export
 endif
 
-.PHONY: all build-controller build-attacker build-victim
+.PHONY: all build-controller build-attacker build-victim build-openvswitch
 
 all: build-controller build-attacker build-victim build-openvswitch
 
