@@ -56,57 +56,9 @@
             "request": "launch",
             "program": "utils/star_topology.py",
             "args": [
-                "--project=gns3",
-                "--n_attackers=3", // the minimum number of attackers to have 1 known , 1 Zda and 1 Test Zda
-                "--n_victims=2"
                 
             ],
             "justMyCode": true
-        },
-        {
-            "name": "BotMaster Star Topology Generation",
-            "type": "python",
-            "request": "launch",
-            "program": "utils/star_with_botmaster.py",
-            "args": [
-                "--project=mitigation",
-                "--n_attackers=1",
-                "--n_victims=4"
-                
-            ],
-            "justMyCode": true
-        },
-        {
-            "name": "Tree Topology Generation",
-            "type": "python",
-            "request": "launch",
-            "program": "utils/tree_topology.py",
-            "args": [
-                "--project=mitigation",
-                "--n_switches=3",
-                "--n_attackers=3", // the minimum number of attackers to have 1 known , 1 Zda and 1 Test Zda
-                "--n_victims=6"
-                
-            ],
-            "justMyCode": true
-        },
-        {
-            "name": "Container Manager",
-            "type": "python",
-            "request": "launch",
-            "program": "container_manager.py",
-            "justMyCode": true,
-            "cwd": "${workspaceFolder}/utils",  // Set the current working directory here
-
-        },
-        {
-            "name": "Dev Container Manager",
-            "type": "python",
-            "request": "launch",
-            "program": "tiger_container_manager_cmd.py",
-            "justMyCode": true,
-            "cwd": "${workspaceFolder}/utils",  // Set the current working directory here
-
         },
         {
             "name": "Server Container Manager",
