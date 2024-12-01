@@ -1,0 +1,15 @@
+{
+    "Echo (Benign G2)": 0.02, 
+    "Hakai": -0.20,
+    "Mirai (ZdA G2)": -0.40,
+    "Hajime (ZdA G2)": -0.26,
+    "Doorlock (Benign G2)": 0.01,
+    "Gafgyt (ZdA G2)": -0.5,
+    "Muhstik (ZdA G2)": -0.6,
+    "H_Scan (ZdA G2)": -0.7,
+    "Okiru (ZdA G1)": -0.8,
+    "Gen_DDoS (ZdA G1)": -0.9, 
+    "Torii": -0.51, 
+    "CC_HeartBeat (ZdA G1)": -0.61,
+    "Hue (Benign)": 0.05
+}
